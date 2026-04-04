@@ -1,0 +1,1570 @@
+[
+  {
+    "id": 1,
+    "date": "1946-01-19",
+    "resolution": "S/RES/1",
+    "subject": "Establishment of a committee to recommend admission of new members",
+    "yes": 10,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 2,
+    "date": "1946-02-16",
+    "resolution": "S/RES/2",
+    "subject": "Armenian situation — establish a sub-commission",
+    "yes": 10,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 3,
+    "date": "1946-04-19",
+    "resolution": "S/RES/5",
+    "subject": "Spanish Franco regime — potential threat to peace",
+    "yes": 8,
+    "no": 2,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 4,
+    "date": "1947-01-10",
+    "resolution": "Draft (vetoed)",
+    "subject": "Spain — call on members to cut diplomatic relations",
+    "yes": 8,
+    "no": 2,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "France",
+      "United Kingdom"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 5,
+    "date": "1950-06-25",
+    "resolution": "S/RES/82",
+    "subject": "Korean War — calls for cessation of hostilities",
+    "yes": 9,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 6,
+    "date": "1950-06-27",
+    "resolution": "S/RES/83",
+    "subject": "Korean War — recommends military assistance to South Korea",
+    "yes": 7,
+    "no": 1,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 7,
+    "date": "1950-07-07",
+    "resolution": "S/RES/84",
+    "subject": "Korean War — establish UN Command",
+    "yes": 7,
+    "no": 0,
+    "abstain": 3,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 8,
+    "date": "1956-10-30",
+    "resolution": "Draft (vetoed)",
+    "subject": "Suez Crisis — cease-fire call vetoed by UK and France",
+    "yes": 7,
+    "no": 2,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "France",
+      "United Kingdom"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 9,
+    "date": "1956-11-04",
+    "resolution": "Draft (vetoed)",
+    "subject": "Hungary — Soviet intervention cease-fire call vetoed",
+    "yes": 10,
+    "no": 1,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Soviet Union"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 10,
+    "date": "1960-07-14",
+    "resolution": "S/RES/143",
+    "subject": "Congo — UN Force deployment (ONUC)",
+    "yes": 8,
+    "no": 0,
+    "abstain": 3,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 11,
+    "date": "1961-02-21",
+    "resolution": "S/RES/161",
+    "subject": "Congo — prevention of civil war, withdrawal of foreign personnel",
+    "yes": 9,
+    "no": 0,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 12,
+    "date": "1965-11-12",
+    "resolution": "S/RES/216",
+    "subject": "Rhodesia — calls on states not to recognize UDI",
+    "yes": 10,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 13,
+    "date": "1966-12-16",
+    "resolution": "S/RES/232",
+    "subject": "Rhodesia — mandatory sanctions (first ever)",
+    "yes": 11,
+    "no": 0,
+    "abstain": 4,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 14,
+    "date": "1967-11-22",
+    "resolution": "S/RES/242",
+    "subject": "Middle East — withdrawal of Israeli forces, right to live in peace",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 15,
+    "date": "1971-03-17",
+    "resolution": "Draft (vetoed)",
+    "subject": "India-Pakistan conflict — cease-fire call vetoed by Soviet Union",
+    "yes": 11,
+    "no": 2,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Soviet Union"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 16,
+    "date": "1973-10-22",
+    "resolution": "S/RES/338",
+    "subject": "October War — immediate cease-fire in place",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 17,
+    "date": "1973-10-25",
+    "resolution": "S/RES/340",
+    "subject": "October War — UNEF II establishment",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 18,
+    "date": "1976-03-31",
+    "resolution": "Draft (vetoed)",
+    "subject": "South Africa — arms embargo vetoed by France, UK, US",
+    "yes": 10,
+    "no": 3,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "France",
+      "United Kingdom",
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 19,
+    "date": "1977-11-04",
+    "resolution": "S/RES/418",
+    "subject": "South Africa — mandatory arms embargo",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 20,
+    "date": "1978-03-19",
+    "resolution": "S/RES/425",
+    "subject": "Lebanon — UNIFIL establishment",
+    "yes": 12,
+    "no": 0,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 21,
+    "date": "1979-01-05",
+    "resolution": "Draft (vetoed)",
+    "subject": "Viet Nam invasion of Cambodia vetoed by Soviet Union",
+    "yes": 13,
+    "no": 2,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Czechoslovakia",
+      "Soviet Union"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 22,
+    "date": "1980-01-13",
+    "resolution": "Draft (vetoed)",
+    "subject": "Soviet intervention in Afghanistan — vetoed by Soviet Union",
+    "yes": 13,
+    "no": 2,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "German Democratic Republic",
+      "Soviet Union"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 23,
+    "date": "1982-04-03",
+    "resolution": "S/RES/502",
+    "subject": "Falkland Islands — Argentine withdrawal, cease-fire",
+    "yes": 10,
+    "no": 1,
+    "abstain": 4,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 24,
+    "date": "1982-06-08",
+    "resolution": "Draft (vetoed)",
+    "subject": "Lebanon — withdrawal of Israeli forces vetoed by US",
+    "yes": 14,
+    "no": 1,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 25,
+    "date": "1982-09-18",
+    "resolution": "Draft (vetoed)",
+    "subject": "Sabra and Shatila massacre — condemnation vetoed by US",
+    "yes": 14,
+    "no": 1,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 26,
+    "date": "1986-01-07",
+    "resolution": "Draft (vetoed)",
+    "subject": "US raid on Libya — condemnation vetoed by UK and US",
+    "yes": 9,
+    "no": 2,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United Kingdom",
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 27,
+    "date": "1986-07-31",
+    "resolution": "Draft (vetoed)",
+    "subject": "Nicaragua contra war — US military activities vetoed by US",
+    "yes": 11,
+    "no": 1,
+    "abstain": 3,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 28,
+    "date": "1988-07-20",
+    "resolution": "S/RES/598",
+    "subject": "Iran-Iraq War — cease-fire",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 29,
+    "date": "1990-08-02",
+    "resolution": "S/RES/660",
+    "subject": "Iraq — condemns invasion of Kuwait, demands withdrawal",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 30,
+    "date": "1990-08-06",
+    "resolution": "S/RES/661",
+    "subject": "Iraq — comprehensive economic sanctions",
+    "yes": 13,
+    "no": 0,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 31,
+    "date": "1990-11-29",
+    "resolution": "S/RES/678",
+    "subject": "Iraq — authorizes use of all necessary means to liberate Kuwait",
+    "yes": 12,
+    "no": 2,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 32,
+    "date": "1991-04-03",
+    "resolution": "S/RES/687",
+    "subject": "Iraq — cease-fire terms, weapons inspections (UNSCOM)",
+    "yes": 12,
+    "no": 1,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 33,
+    "date": "1991-04-05",
+    "resolution": "S/RES/688",
+    "subject": "Iraq — humanitarian crisis in Kurdish and Shia areas",
+    "yes": 10,
+    "no": 3,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 34,
+    "date": "1992-01-21",
+    "resolution": "S/RES/731",
+    "subject": "Libya — Lockerbie bombing suspects extradition",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 35,
+    "date": "1992-03-31",
+    "resolution": "S/RES/748",
+    "subject": "Libya — sanctions for Lockerbie suspects",
+    "yes": 10,
+    "no": 0,
+    "abstain": 5,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 36,
+    "date": "1992-04-24",
+    "resolution": "S/RES/751",
+    "subject": "Somalia — UNOSOM I establishment",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 37,
+    "date": "1992-05-15",
+    "resolution": "S/RES/757",
+    "subject": "Yugoslavia — sanctions on FRY (Serbia and Montenegro)",
+    "yes": 13,
+    "no": 0,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 38,
+    "date": "1992-12-03",
+    "resolution": "S/RES/794",
+    "subject": "Somalia — authorizes US-led UNITAF humanitarian operation",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 39,
+    "date": "1993-05-06",
+    "resolution": "S/RES/824",
+    "subject": "Bosnia — Srebrenica as safe area",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 40,
+    "date": "1993-06-04",
+    "resolution": "S/RES/836",
+    "subject": "Bosnia — UNPROFOR authorized to defend safe areas",
+    "yes": 13,
+    "no": 0,
+    "abstain": 2,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 41,
+    "date": "1993-07-16",
+    "resolution": "S/RES/846",
+    "subject": "Haiti — UNMIH establishment",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 42,
+    "date": "1993-10-03",
+    "resolution": "S/RES/872",
+    "subject": "Rwanda — UNAMIR establishment",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 43,
+    "date": "1994-04-21",
+    "resolution": "S/RES/912",
+    "subject": "Rwanda — reduction of UNAMIR during genocide",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 44,
+    "date": "1994-05-17",
+    "resolution": "S/RES/918",
+    "subject": "Rwanda — arms embargo, expansion of UNAMIR",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 45,
+    "date": "1994-07-31",
+    "resolution": "S/RES/940",
+    "subject": "Haiti — authorizes use of force to restore democracy",
+    "yes": 12,
+    "no": 0,
+    "abstain": 3,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 46,
+    "date": "1994-11-08",
+    "resolution": "S/RES/955",
+    "subject": "Rwanda — establishment of ICTR",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 47,
+    "date": "1995-09-15",
+    "resolution": "S/RES/1010",
+    "subject": "Bosnia — NATO authorized bombing campaign",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 48,
+    "date": "1996-03-27",
+    "resolution": "Draft (vetoed)",
+    "subject": "Israeli settlements in East Jerusalem — vetoed by US",
+    "yes": 14,
+    "no": 1,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 49,
+    "date": "1996-09-10",
+    "resolution": "Draft (vetoed)",
+    "subject": "US military strike on Iraq — condemnation vetoed by UK, US",
+    "yes": 11,
+    "no": 2,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United Kingdom",
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 50,
+    "date": "1997-03-07",
+    "resolution": "Draft (vetoed)",
+    "subject": "Hebron — Israeli activities vetoed by US",
+    "yes": 14,
+    "no": 1,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 51,
+    "date": "1997-11-21",
+    "resolution": "Draft (vetoed)",
+    "subject": "Guatemala — condemnation of Guatemalan activities vetoed by China (Taiwan issue)",
+    "yes": 10,
+    "no": 1,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 52,
+    "date": "1998-03-31",
+    "resolution": "S/RES/1160",
+    "subject": "Kosovo — arms embargo on FRY and Kosovo Albanian groups",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 53,
+    "date": "1998-09-23",
+    "resolution": "S/RES/1199",
+    "subject": "Kosovo — cease-fire, humanitarian access",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 54,
+    "date": "1999-02-25",
+    "resolution": "Draft (vetoed)",
+    "subject": "FYR Macedonia — UN preventive deployment vetoed by China (Taiwan issue)",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 55,
+    "date": "1999-03-26",
+    "resolution": "Draft (vetoed)",
+    "subject": "Kosovo — NATO military action cease-fire vetoed by China, Russia",
+    "yes": 3,
+    "no": 12,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 56,
+    "date": "1999-06-10",
+    "resolution": "S/RES/1244",
+    "subject": "Kosovo — KFOR and UNMIK establishment",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 57,
+    "date": "1999-09-15",
+    "resolution": "S/RES/1264",
+    "subject": "East Timor — INTERFET authorization",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 58,
+    "date": "2000-10-07",
+    "resolution": "Draft (vetoed)",
+    "subject": "Palestinian territories — condemn Israeli violence, vetoed by US",
+    "yes": 9,
+    "no": 1,
+    "abstain": 5,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 59,
+    "date": "2001-09-12",
+    "resolution": "S/RES/1368",
+    "subject": "9/11 attacks — condemns, recognizes right of self-defense",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 60,
+    "date": "2001-09-28",
+    "resolution": "S/RES/1373",
+    "subject": "Anti-terrorism measures — binding obligations on states",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 61,
+    "date": "2001-12-20",
+    "resolution": "S/RES/1386",
+    "subject": "Afghanistan — ISAF establishment",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 62,
+    "date": "2002-09-12",
+    "resolution": "S/RES/1441",
+    "subject": "Iraq — WMD declaration demands, last chance for compliance",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 63,
+    "date": "2003-03-17",
+    "resolution": "Draft (vetoed)",
+    "subject": "Iraq War authorization — vetoed by France, Russia; China would also veto",
+    "yes": 4,
+    "no": 11,
+    "abstain": 0,
+    "result": "not_adopted",
+    "vetoed_by": [
+      "France",
+      "Russia"
+    ],
+    "chapter_vii": true
+  },
+  {
+    "id": 64,
+    "date": "2003-05-22",
+    "resolution": "S/RES/1483",
+    "subject": "Iraq post-war — lifting of sanctions, recognition of occupation",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 65,
+    "date": "2004-06-08",
+    "resolution": "S/RES/1546",
+    "subject": "Iraq — transfer of sovereignty, multinational force",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 66,
+    "date": "2004-04-28",
+    "resolution": "Draft (vetoed)",
+    "subject": "Israeli settlements — condemnation vetoed by US",
+    "yes": 11,
+    "no": 1,
+    "abstain": 3,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 67,
+    "date": "2004-10-05",
+    "resolution": "Draft (vetoed)",
+    "subject": "Israeli military operation in Gaza — vetoed by US",
+    "yes": 11,
+    "no": 1,
+    "abstain": 3,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 68,
+    "date": "2004-10-02",
+    "resolution": "Draft (vetoed)",
+    "subject": "Darfur — condemnation vetoed by China",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 69,
+    "date": "2006-07-13",
+    "resolution": "Draft (vetoed)",
+    "subject": "Lebanon/Israel conflict — end to hostilities, vetoed by US",
+    "yes": 10,
+    "no": 1,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 70,
+    "date": "2006-08-11",
+    "resolution": "S/RES/1701",
+    "subject": "Lebanon — cease-fire, UNIFIL reinforcement",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 71,
+    "date": "2006-07-31",
+    "resolution": "S/RES/1696",
+    "subject": "Iran — nuclear programme, demands suspension of enrichment",
+    "yes": 14,
+    "no": 1,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 72,
+    "date": "2006-12-23",
+    "resolution": "S/RES/1737",
+    "subject": "Iran — nuclear sanctions (first)",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 73,
+    "date": "2007-03-24",
+    "resolution": "S/RES/1747",
+    "subject": "Iran — additional nuclear sanctions",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 74,
+    "date": "2007-01-13",
+    "resolution": "Draft (vetoed)",
+    "subject": "Myanmar — human rights situation vetoed by China, Russia",
+    "yes": 9,
+    "no": 2,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 75,
+    "date": "2007-07-11",
+    "resolution": "Draft (vetoed)",
+    "subject": "Zimbabwe — sanctions vetoed by China, Russia",
+    "yes": 9,
+    "no": 2,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 76,
+    "date": "2008-06-11",
+    "resolution": "S/RES/1816",
+    "subject": "Somalia — authorizes anti-piracy operations in territorial waters",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 77,
+    "date": "2008-07-15",
+    "resolution": "Draft (vetoed)",
+    "subject": "Zimbabwe — targeted sanctions vetoed by China, Russia",
+    "yes": 9,
+    "no": 2,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 78,
+    "date": "2010-06-09",
+    "resolution": "S/RES/1929",
+    "subject": "Iran — fourth round of sanctions",
+    "yes": 12,
+    "no": 2,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 79,
+    "date": "2011-02-26",
+    "resolution": "S/RES/1970",
+    "subject": "Libya — arms embargo, referral to ICC",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 80,
+    "date": "2011-03-17",
+    "resolution": "S/RES/1973",
+    "subject": "Libya — authorizes no-fly zone and protection of civilians",
+    "yes": 10,
+    "no": 0,
+    "abstain": 5,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 81,
+    "date": "2011-10-04",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — human rights crisis condemnation vetoed by China, Russia",
+    "yes": 9,
+    "no": 2,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 82,
+    "date": "2012-02-04",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — political transition vetoed by China, Russia",
+    "yes": 13,
+    "no": 2,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 83,
+    "date": "2012-07-19",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — sanctions threat vetoed by China, Russia",
+    "yes": 11,
+    "no": 2,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 84,
+    "date": "2013-05-15",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — UN investigation mechanism vetoed by China, Russia",
+    "yes": 13,
+    "no": 2,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 85,
+    "date": "2014-03-15",
+    "resolution": "Draft (vetoed)",
+    "subject": "Crimea referendum — non-recognition vetoed by Russia",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 86,
+    "date": "2014-07-29",
+    "resolution": "Draft (vetoed)",
+    "subject": "MH17 — international tribunal vetoed by Russia",
+    "yes": 11,
+    "no": 1,
+    "abstain": 3,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 87,
+    "date": "2014-05-22",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — referral to ICC vetoed by China, Russia",
+    "yes": 13,
+    "no": 2,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 88,
+    "date": "2015-03-24",
+    "resolution": "S/RES/2216",
+    "subject": "Yemen — arms embargo, coalition authorized",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 89,
+    "date": "2016-12-23",
+    "resolution": "S/RES/2334",
+    "subject": "Israeli settlements — condemns settlement activity in occupied territories",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 90,
+    "date": "2017-02-28",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — chemical weapons sanctions vetoed by China, Russia",
+    "yes": 9,
+    "no": 2,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": true
+  },
+  {
+    "id": 91,
+    "date": "2017-04-12",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — chemical weapons investigation vetoed by Russia",
+    "yes": 10,
+    "no": 2,
+    "abstain": 3,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 92,
+    "date": "2017-11-24",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — OPCW-JIM mandate extension vetoed by Russia",
+    "yes": 11,
+    "no": 2,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": true
+  },
+  {
+    "id": 93,
+    "date": "2017-12-18",
+    "resolution": "Draft (vetoed)",
+    "subject": "Jerusalem status — US proclamation vetoed by US",
+    "yes": 14,
+    "no": 1,
+    "abstain": 0,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 94,
+    "date": "2018-02-24",
+    "resolution": "S/RES/2401",
+    "subject": "Syria — humanitarian cease-fire in Eastern Ghouta",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 95,
+    "date": "2018-04-10",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — chemical weapons investigation vetoed by Russia",
+    "yes": 12,
+    "no": 2,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 96,
+    "date": "2018-04-14",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria/US strikes — condemn US/UK/France strikes vetoed by 8 members",
+    "yes": 3,
+    "no": 8,
+    "abstain": 4,
+    "result": "not_adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 97,
+    "date": "2019-02-28",
+    "resolution": "Draft (vetoed)",
+    "subject": "Venezuela — free elections vetoed by China, Russia",
+    "yes": 9,
+    "no": 2,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 98,
+    "date": "2019-05-01",
+    "resolution": "Draft (vetoed)",
+    "subject": "Venezuela — non-interference vetoed by US, UK, France",
+    "yes": 4,
+    "no": 7,
+    "abstain": 4,
+    "result": "not_adopted",
+    "vetoed_by": [
+      "France",
+      "United Kingdom",
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 99,
+    "date": "2019-09-20",
+    "resolution": "Draft (vetoed)",
+    "subject": "Bolivia/Venezuela sanctions threat vetoed by China, Russia",
+    "yes": 7,
+    "no": 2,
+    "abstain": 6,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 100,
+    "date": "2020-07-01",
+    "resolution": "S/RES/2532",
+    "subject": "COVID-19 — humanitarian ceasefire in conflict zones",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 101,
+    "date": "2022-02-25",
+    "resolution": "Draft (vetoed)",
+    "subject": "Ukraine — aggression vetoed by Russia",
+    "yes": 11,
+    "no": 1,
+    "abstain": 3,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": true
+  },
+  {
+    "id": 102,
+    "date": "2022-09-30",
+    "resolution": "Draft (vetoed)",
+    "subject": "Ukraine — Russian annexation condemnation vetoed by Russia",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 103,
+    "date": "2023-10-18",
+    "resolution": "Draft (vetoed)",
+    "subject": "Gaza — humanitarian pause vetoed by US",
+    "yes": 12,
+    "no": 1,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 104,
+    "date": "2023-12-08",
+    "resolution": "Draft (vetoed)",
+    "subject": "Gaza — humanitarian cease-fire vetoed by US",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 105,
+    "date": "2024-02-20",
+    "resolution": "Draft (vetoed)",
+    "subject": "Gaza — immediate cease-fire vetoed by US",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 106,
+    "date": "2024-03-22",
+    "resolution": "S/RES/2728",
+    "subject": "Gaza — immediate cease-fire during Ramadan",
+    "yes": 14,
+    "no": 0,
+    "abstain": 1,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 107,
+    "date": "2005-09-24",
+    "resolution": "S/RES/1624",
+    "subject": "Terrorism — incitement to commit acts of terrorism",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 108,
+    "date": "2016-06-27",
+    "resolution": "S/RES/2295",
+    "subject": "Mali — MINUSMA mandate renewal",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 109,
+    "date": "2015-07-20",
+    "resolution": "S/RES/2231",
+    "subject": "Iran — nuclear deal (JCPOA) endorsement",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 110,
+    "date": "2016-12-19",
+    "resolution": "Draft (vetoed)",
+    "subject": "Aleppo — monitoring mission vetoed by China, Russia",
+    "yes": 11,
+    "no": 2,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 111,
+    "date": "2006-03-30",
+    "resolution": "S/RES/1674",
+    "subject": "Protection of civilians — responsibility to protect affirmed",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 112,
+    "date": "2016-12-21",
+    "resolution": "S/RES/2328",
+    "subject": "Aleppo — evacuation monitoring mission",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 113,
+    "date": "2014-03-27",
+    "resolution": "S/RES/2139",
+    "subject": "Syria — humanitarian access",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  },
+  {
+    "id": 114,
+    "date": "2017-06-30",
+    "resolution": "S/RES/2363",
+    "subject": "Sudan — UNAMID mandate renewal",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 115,
+    "date": "2018-07-20",
+    "resolution": "Draft (vetoed)",
+    "subject": "Gaza — international protection mission vetoed by US",
+    "yes": 10,
+    "no": 1,
+    "abstain": 4,
+    "result": "vetoed",
+    "vetoed_by": [
+      "United States"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 116,
+    "date": "2019-06-07",
+    "resolution": "S/RES/2472",
+    "subject": "Somalia — AMISOM mandate renewal",
+    "yes": 15,
+    "no": 0,
+    "abstain": 0,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": true
+  },
+  {
+    "id": 117,
+    "date": "2020-05-08",
+    "resolution": "Draft (vetoed)",
+    "subject": "Syria — cross-border aid vetoed by China, Russia",
+    "yes": 12,
+    "no": 2,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 118,
+    "date": "2021-02-26",
+    "resolution": "Draft (vetoed)",
+    "subject": "Myanmar coup — condemnation vetoed by China, Russia",
+    "yes": 11,
+    "no": 2,
+    "abstain": 2,
+    "result": "vetoed",
+    "vetoed_by": [
+      "China",
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 119,
+    "date": "2022-03-25",
+    "resolution": "Draft (vetoed)",
+    "subject": "Ukraine — humanitarian corridors vetoed by Russia",
+    "yes": 13,
+    "no": 1,
+    "abstain": 1,
+    "result": "vetoed",
+    "vetoed_by": [
+      "Russia"
+    ],
+    "chapter_vii": false
+  },
+  {
+    "id": 120,
+    "date": "2022-04-05",
+    "resolution": "S/RES/2623",
+    "subject": "Ukraine — emergency special session of General Assembly",
+    "yes": 11,
+    "no": 1,
+    "abstain": 3,
+    "result": "adopted",
+    "vetoed_by": [],
+    "chapter_vii": false
+  }
+]
