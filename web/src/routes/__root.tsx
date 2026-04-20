@@ -1,0 +1,45 @@
+import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+
+import appCss from '../styles.css?url'
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      { charSet: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { title: 'UN Votes' },
+      { name: 'description', content: 'Track voting records of the United Nations General Assembly and Security Council.' },
+    ],
+    links: [
+      { rel: 'stylesheet', href: appCss },
+    ],
+  }),
+  component: RootComponent,
+  shellComponent: RootDocument,
+})
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  )
+}
+
+function RootComponent() {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  )
+}
