@@ -1,6 +1,9 @@
-# UN Votes
+<div align="center">
+  <h1>allofourvotes.org</h1>
+  <p>View all United Nations voting data (General Assembly and Security Council) from 1946.</p>
+</div>
 
-UN General Assembly and Security Council voting data pipeline and web viewer.
+**Note: `web/` is undergoing a rewrite to use SvelteKit/Svelte.**
 
 ## Structure
 
