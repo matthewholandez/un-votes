@@ -1,4 +1,6 @@
 <script lang="ts">
+	let { data } = $props();
+
 	type Tally = { y: number | null; n: number | null; a: number | null };
 	type Row = {
 		day: string;
@@ -13,151 +15,210 @@
 	};
 	type Month = { year: string; name: string; total: number; contested: number; rows: Row[] };
 
-	const months: Month[] = [
-		{
-			year: '2024',
-			name: 'December',
-			total: 34,
-			contested: 6,
-			rows: [
-				{
-					day: '19',
-					dow: 'Thu',
-					id: 'A/RES/79/87',
-					title:
-						'Strengthening of the coordination of emergency humanitarian assistance of the United Nations',
-					tags: ['Humanitarian', 'Annual item'],
-					tally: { y: null, n: null, a: null },
-					bar: null,
-					result: 'Consensus',
-					note: 'Adopted without a vote'
-				},
-				{
-					day: '17',
-					dow: 'Tue',
-					id: 'A/RES/79/144',
-					title: 'Right of peoples to self-determination',
-					tags: ['Human rights', 'Self-determination'],
-					tally: { y: 175, n: 0, a: 7 },
-					bar: { yes: 96.2, no: 0, abs: 3.8 },
-					result: 'Adopted'
-				},
-				{
-					day: '11',
-					dow: 'Wed',
-					id: 'A/RES/79/12',
-					title: 'Situation in the Occupied Palestinian Territory and the Syrian Golan',
-					tags: ['Middle East', 'Contested'],
-					tally: { y: 156, n: 9, a: 18 },
-					bar: { yes: 85.2, no: 4.9, abs: 9.9 },
-					result: 'Adopted'
-				},
-				{
-					day: '05',
-					dow: 'Thu',
-					id: 'A/RES/79/110',
-					title: 'Cooperation between the United Nations and the African Union',
-					tags: ['Africa', 'Partnerships'],
-					tally: { y: null, n: null, a: null },
-					bar: null,
-					result: 'Consensus',
-					note: 'Adopted without a vote'
-				}
-			]
-		},
-		{
-			year: '2024',
-			name: 'November',
-			total: 28,
-			contested: 4,
-			rows: [
-				{
-					day: '22',
-					dow: 'Fri',
-					id: 'A/RES/79/45',
-					title: 'Sustainable Development Goals mid-term review and reporting framework',
-					tags: ['SDGs', 'Development'],
-					tally: { y: 180, n: 1, a: 5 },
-					bar: { yes: 96.8, no: 0.5, abs: 2.7 },
-					result: 'Adopted'
-				},
-				{
-					day: '15',
-					dow: 'Fri',
-					id: 'A/RES/79/29',
-					title:
-						'Combating glorification of Nazism, neo-Nazism and other practices that contribute to fuelling contemporary forms of racism',
-					tags: ['Anti-discrimination', 'Contested'],
-					tally: { y: 112, n: 50, a: 14 },
-					bar: { yes: 63.6, no: 28.4, abs: 8.0 },
-					result: 'Adopted'
-				}
-			]
-		},
-		{
-			year: '2024',
-			name: 'October',
-			total: 22,
-			contested: 3,
-			rows: [
-				{
-					day: '30',
-					dow: 'Wed',
-					id: 'A/RES/79/02',
-					title:
-						'Necessity of ending the economic, commercial and financial embargo imposed by the United States of America against Cuba',
-					tags: ['Sanctions', 'Americas', 'Annual item'],
-					tally: { y: 187, n: 2, a: 1 },
-					bar: { yes: 98.4, no: 1.1, abs: 0.5 },
-					result: 'Adopted'
-				},
-				{
-					day: '09',
-					dow: 'Wed',
-					id: 'A/RES/79/63',
-					title: 'Promotion of inclusive dialogue and tolerance against hate speech',
-					tags: ['Human rights'],
-					tally: { y: 166, n: 2, a: 12 },
-					bar: { yes: 92.2, no: 1.1, abs: 6.7 },
-					result: 'Adopted'
-				}
-			]
-		}
-	];
-
 	const START_YEAR = 1946;
 	const END_YEAR = 2024;
 	const N_YEARS = END_YEAR - START_YEAR + 1;
-	const SEL_START = 2014;
-	const SEL_END = 2024;
 
-	function countsFor(yi: number): number {
-		const t = yi / (N_YEARS - 1);
-		const base = 60 + 280 * (1 - Math.pow(1 - t, 1.5));
-		const w = Math.sin(yi * 1.7) * 22 + Math.cos(yi * 0.6) * 14;
-		return Math.max(40, Math.round(base + w));
+	// State
+	let mode = $state<'compact' | 'timeline'>('timeline');
+	let q = $state('');
+	let subject = $state('All subjects');
+	let resultFilter = $state('All results');
+	let voteFilter = $state('All');
+	
+	let selStart = $state(1946);
+	let selEnd = $state(2024);
+	let sortOrder = $state<'newest' | 'oldest'>('newest');
+	let currentPage = $state(1);
+	const PAGE_SIZE = 50;
+
+	// Reset page on filter change
+	$effect(() => {
+		// Just referencing these causes this effect to re-run
+		q; subject; resultFilter; voteFilter; selStart; selEnd; sortOrder;
+		currentPage = 1;
+	});
+
+	// Derive subjects list
+	const allSubjects = $derived.by(() => {
+		const subs = new Set<string>();
+		for (const res of data.resolutions) {
+			if (res.subjects) {
+				res.subjects.split(',').forEach((s: string) => subs.add(s.trim()));
+			}
+		}
+		return Array.from(subs).filter(Boolean).sort();
+	});
+
+	// Year stats
+	const yearCounts = $derived.by(() => {
+		const counts: Record<number, number> = {};
+		for (let y = START_YEAR; y <= END_YEAR; y++) counts[y] = 0;
+		for (const res of data.resolutions) {
+			if (res.date) {
+				const y = new Date(res.date).getUTCFullYear();
+				if (y >= START_YEAR && y <= END_YEAR) {
+					counts[y]++;
+				}
+			}
+		}
+		return counts;
+	});
+
+	const yearBars = $derived.by(() => {
+		let max = 0;
+		for (let y = START_YEAR; y <= END_YEAR; y++) {
+			if (yearCounts[y] > max) max = yearCounts[y];
+		}
+		const bars = [];
+		for (let y = START_YEAR; y <= END_YEAR; y++) {
+			const c = yearCounts[y];
+			bars.push({
+				year: y,
+				count: c,
+				height: max === 0 ? 2 : Math.max(2, (c / max) * 40),
+				inRange: y >= selStart && y <= selEnd
+			});
+		}
+		return bars;
+	});
+
+	// Filtering
+	const filtered = $derived.by(() => {
+		let res = data.resolutions.filter((r: any) => {
+			if (!r.date) return false;
+			const y = new Date(r.date).getUTCFullYear();
+			if (y < selStart || y > selEnd) return false;
+			
+			if (subject !== 'All subjects' && (!r.subjects || !r.subjects.includes(subject))) return false;
+			
+			const isConsensus = r.summary.yes === 0 && r.summary.no === 0 && r.summary.abstain === 0;
+			if (resultFilter === 'Adopted' && r.result !== 'Adopted') return false;
+			if (resultFilter === 'Rejected' && r.result !== 'Rejected') return false;
+			if (resultFilter === 'Consensus' && !isConsensus) return false;
+			
+			if (voteFilter === 'Recorded' && isConsensus) return false;
+			if (voteFilter === 'Consensus' && !isConsensus) return false;
+			
+			if (q) {
+				const ql = q.toLowerCase();
+				if (!r.title.toLowerCase().includes(ql) && 
+				    !r.id.toLowerCase().includes(ql)) {
+					return false;
+				}
+			}
+			
+			return true;
+		});
+
+		res.sort((a: any, b: any) => {
+			const da = new Date(a.date).getTime();
+			const db = new Date(b.date).getTime();
+			return sortOrder === 'newest' ? db - da : da - db;
+		});
+
+		return res;
+	});
+
+	const paginated = $derived(filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE));
+	const totalPages = $derived(Math.max(1, Math.ceil(filtered.length / PAGE_SIZE)));
+
+	function processData(resolutions: any[]): Month[] {
+		if (!resolutions) return [];
+		
+		const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		const dowNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+		
+		const grouped = new Map<string, Month>();
+		
+		for (const res of resolutions) {
+			if (!res.date) continue;
+			
+			const d = new Date(res.date);
+			const yearStr = d.getUTCFullYear().toString();
+			const monthIdx = d.getUTCMonth();
+			const key = `${yearStr}-${monthIdx}`;
+			
+			if (!grouped.has(key)) {
+				grouped.set(key, {
+					year: yearStr,
+					name: monthNames[monthIdx],
+					total: 0,
+					contested: 0,
+					rows: []
+				});
+			}
+			
+			const month = grouped.get(key)!;
+			month.total += 1;
+			
+			const isConsensus = res.summary.yes === 0 && res.summary.no === 0 && res.summary.abstain === 0;
+			if (!isConsensus) month.contested += 1;
+			
+			const totalVotes = res.summary.yes + res.summary.no + res.summary.abstain;
+			let bar = null;
+			if (totalVotes > 0) {
+				bar = {
+					yes: (res.summary.yes / totalVotes) * 100,
+					no: (res.summary.no / totalVotes) * 100,
+					abs: (res.summary.abstain / totalVotes) * 100
+				};
+			}
+			
+			const tags = res.subjects ? res.subjects.split(',').map((s: string) => s.trim()).filter((s: string) => s).slice(0, 2) : [];
+			
+			month.rows.push({
+				day: d.getUTCDate().toString().padStart(2, '0'),
+				dow: dowNames[d.getUTCDay()],
+				id: res.id,
+				title: res.title,
+				tags,
+				tally: { 
+					y: isConsensus ? null : res.summary.yes, 
+					n: isConsensus ? null : res.summary.no, 
+					a: isConsensus ? null : res.summary.abstain 
+				},
+				bar,
+				result: res.result || (isConsensus ? 'Consensus' : 'Adopted'),
+				note: isConsensus ? 'Adopted without a vote' : undefined
+			});
+		}
+		
+		const sortedKeys = Array.from(grouped.keys()).sort((a, b) => {
+			const [ya, ma] = a.split('-').map(Number);
+			const [yb, mb] = b.split('-').map(Number);
+			const diff = sortOrder === 'newest' ? yb - ya : ya - yb;
+			if (diff !== 0) return diff;
+			return sortOrder === 'newest' ? mb - ma : ma - mb;
+		});
+		
+		return sortedKeys.map(k => {
+			const m = grouped.get(k)!;
+			m.rows.sort((a, b) => sortOrder === 'newest' ? parseInt(b.day) - parseInt(a.day) : parseInt(a.day) - parseInt(b.day));
+			return m;
+		});
 	}
 
-	const yearBars = (() => {
-		const data: number[] = [];
-		let max = 0;
-		for (let y = 0; y < N_YEARS; y++) {
-			const c = countsFor(y);
-			data.push(c);
-			if (c > max) max = c;
-		}
-		return data.map((c, y) => {
-			const year = START_YEAR + y;
-			return {
-				year,
-				count: c,
-				height: Math.max(2, (c / max) * 40),
-				inRange: year >= SEL_START && year <= SEL_END
-			};
-		});
-	})();
+	const months = $derived(processData(paginated));
 
-	let mode = $state<'compact' | 'timeline'>('timeline');
+	function clearFilters() {
+		q = '';
+		subject = 'All subjects';
+		resultFilter = 'All results';
+		voteFilter = 'All';
+		selStart = START_YEAR;
+		selEnd = END_YEAR;
+	}
+
+	// Bar chart dragging
+	let isDragging = $state(false);
+	let dragStart = $state<number | null>(null);
+
+	function getYearFromEvent(e: PointerEvent, el: HTMLElement) {
+		const rect = el.getBoundingClientRect();
+		const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+		return Math.floor(START_YEAR + (pct * N_YEARS));
+	}
 </script>
 
 <header class="un-header">
@@ -186,10 +247,34 @@
 		<div class="d5-activity-head">
 			<div class="label"><b>Resolutions per year</b> · GA, 1946–2024</div>
 			<div class="range">
-				Selected <b>{SEL_START} – {SEL_END}</b><span class="reset">reset</span>
+				Selected <b>{selStart} – {selEnd}</b>{#if selStart !== START_YEAR || selEnd !== END_YEAR}<button type="button" class="reset" onclick={() => {selStart = START_YEAR; selEnd = END_YEAR}}>reset</button>{/if}
 			</div>
 		</div>
-		<div class="d5-bars" aria-label="Resolutions per year, 1946–2024">
+		<div role="slider" aria-valuemin={START_YEAR} aria-valuemax={END_YEAR} aria-valuenow={selStart} tabindex="0" class="d5-bars" aria-label="Resolutions per year, 1946–2024"
+			onpointerdown={(e) => {
+				isDragging = true;
+				const y = getYearFromEvent(e, e.currentTarget);
+				dragStart = y;
+				selStart = y;
+				selEnd = y;
+				e.currentTarget.setPointerCapture(e.pointerId);
+			}}
+			onpointermove={(e) => {
+				if (!isDragging || dragStart === null) return;
+				const y = getYearFromEvent(e, e.currentTarget);
+				selStart = Math.min(dragStart, y);
+				selEnd = Math.max(dragStart, y);
+			}}
+			onpointerup={(e) => {
+				isDragging = false;
+				dragStart = null;
+				e.currentTarget.releasePointerCapture(e.pointerId);
+			}}
+			onpointercancel={(e) => {
+				isDragging = false;
+				dragStart = null;
+			}}
+		>
 			{#each yearBars as b (b.year)}
 				<div
 					class="b"
@@ -209,39 +294,79 @@
 	<div class="filter-bar">
 		<div class="filter-field">
 			<label for="search-q">Search</label>
-			<div class="input" id="search-q">
-				<span class="ph">Title, resolution ID, country…</span><span class="ico">⌕</span>
+			<div class="input-wrap">
+				<input type="text" id="search-q" bind:value={q} placeholder="Title, resolution ID…" class="input" />
 			</div>
 		</div>
 		<div class="filter-field">
-			<span class="label">Subject</span>
-			<div class="select">All subjects</div>
+			<label for="f-subj" class="label">Subject</label>
+			<select id="f-subj" class="select" bind:value={subject}>
+				<option value="All subjects">All subjects</option>
+				{#each allSubjects as s}
+					<option value={s}>{s}</option>
+				{/each}
+			</select>
 		</div>
 		<div class="filter-field">
-			<span class="label">Result</span>
-			<div class="select">All results</div>
+			<label for="f-res" class="label">Result</label>
+			<select id="f-res" class="select" bind:value={resultFilter}>
+				<option value="All results">All results</option>
+				<option value="Adopted">Adopted</option>
+				<option value="Rejected">Rejected</option>
+				<option value="Consensus">Consensus (No Vote)</option>
+			</select>
 		</div>
 		<div class="filter-field">
-			<span class="label">Vote type</span>
-			<div class="select">Recorded + Consensus</div>
+			<label for="f-vote" class="label">Vote type</label>
+			<select id="f-vote" class="select" bind:value={voteFilter}>
+				<option value="All">Recorded + Consensus</option>
+				<option value="Recorded">Recorded Only</option>
+				<option value="Consensus">Consensus Only</option>
+			</select>
 		</div>
-		<button class="filter-btn" type="button">Apply</button>
 	</div>
 
+	{#if q || subject !== 'All subjects' || resultFilter !== 'All results' || voteFilter !== 'All' || selStart !== START_YEAR || selEnd !== END_YEAR}
 	<div class="active-filters">
 		<span>Filtered by</span>
-		<span class="chip">Years · 2014–2024 <span class="x">✕</span></span>
-		<span class="chip">Subject · Middle East <span class="x">✕</span></span>
-		<span class="clear-all">Clear all</span>
+		{#if selStart !== START_YEAR || selEnd !== END_YEAR}
+			<button type="button" class="chip" onclick={() => {selStart = START_YEAR; selEnd = END_YEAR}}>
+				Years · {selStart}–{selEnd} <span class="x">✕</span>
+			</button>
+		{/if}
+		{#if q}
+			<button type="button" class="chip" onclick={() => q = ''}>
+				Search · "{q}" <span class="x">✕</span>
+			</button>
+		{/if}
+		{#if subject !== 'All subjects'}
+			<button type="button" class="chip" onclick={() => subject = 'All subjects'}>
+				Subject · {subject} <span class="x">✕</span>
+			</button>
+		{/if}
+		{#if resultFilter !== 'All results'}
+			<button type="button" class="chip" onclick={() => resultFilter = 'All results'}>
+				Result · {resultFilter} <span class="x">✕</span>
+			</button>
+		{/if}
+		{#if voteFilter !== 'All'}
+			<button type="button" class="chip" onclick={() => voteFilter = 'All'}>
+				Vote · {voteFilter} <span class="x">✕</span>
+			</button>
+		{/if}
+		<button type="button" class="clear-all" onclick={clearFilters}>Clear all</button>
 	</div>
+	{/if}
 
 	<div class="d5" data-mode={mode}>
 		<div class="d5-toolbar">
 			<div class="left">
-				Showing <b>1 – 8</b> of <b>1,847</b> resolutions across <b>10 years</b>
+				Showing <b>{filtered.length > 0 ? (currentPage - 1) * PAGE_SIZE + 1 : 0} – {Math.min(currentPage * PAGE_SIZE, filtered.length)}</b> of <b>{filtered.length.toLocaleString()}</b> resolutions
 			</div>
 			<div class="right">
-				<span class="sort">Sort · Date (newest) ▾</span>
+				<button class="sort" onclick={() => sortOrder = sortOrder === 'newest' ? 'oldest' : 'newest'} style="background:none;border:none;font:inherit;">
+					Sort · Date ({sortOrder}) ▾
+				</button>
 				<div class="d5-toggle" role="group" aria-label="Row density">
 					<button
 						type="button"
@@ -323,12 +448,12 @@
 
 		<div class="pagination">
 			<div>
-				Showing <b>1–8</b> of <b>1,847</b> resolutions in selected range
+				Showing <b>{filtered.length > 0 ? (currentPage - 1) * PAGE_SIZE + 1 : 0}–{Math.min(currentPage * PAGE_SIZE, filtered.length)}</b> of <b>{filtered.length.toLocaleString()}</b> resolutions in selected range
 			</div>
 			<div class="pages">
-				<button class="pg-btn" type="button" disabled>← Previous</button>
-				<span class="pg-num">Page 1 / 231</span>
-				<button class="pg-btn" type="button">Next →</button>
+				<button class="pg-btn" type="button" disabled={currentPage <= 1} onclick={() => currentPage--}>← Previous</button>
+				<span class="pg-num">Page {currentPage} / {totalPages}</span>
+				<button class="pg-btn" type="button" disabled={currentPage >= totalPages} onclick={() => currentPage++}>Next →</button>
 			</div>
 		</div>
 	</div>
@@ -481,8 +606,12 @@
 		color: var(--fg-3);
 		font-weight: var(--fw-semibold);
 	}
-	.filter-field .input,
-	.filter-field .select {
+	
+	.filter-field .input-wrap {
+		position: relative;
+	}
+	.filter-field input.input {
+		width: 100%;
 		height: 32px;
 		border: 1px solid var(--border-strong);
 		border-radius: var(--radius-2);
@@ -491,31 +620,28 @@
 		font: inherit;
 		font-size: var(--fs-sm);
 		color: var(--fg);
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 	}
-	.filter-field .input .ico,
-	.filter-field .input .ph {
+	.filter-field input.input::placeholder {
 		color: var(--fg-4);
 	}
-	.filter-field .select::after {
-		content: '▾';
-		font-size: 9px;
-		color: var(--fg-4);
-	}
-	.filter-btn {
+	.filter-field select.select {
+		appearance: none;
+		width: 100%;
 		height: 32px;
-		padding: 0 14px;
-		background: var(--fg-strong);
-		color: var(--fg-on-dark);
-		border: 1px solid var(--fg-strong);
+		border: 1px solid var(--border-strong);
 		border-radius: var(--radius-2);
+		background: var(--bg);
+		padding: 0 24px 0 10px;
 		font: inherit;
-		font-size: var(--fs-xs);
-		letter-spacing: var(--tracking-wider);
-		text-transform: uppercase;
-		font-weight: var(--fw-semibold);
+		font-size: var(--fs-sm);
+		color: var(--fg);
+		background-image: url("data:image/svg+xml;utf8,<svg fill='none' height='14' viewBox='0 0 14 14' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M3.5 5.25L7 8.75L10.5 5.25' stroke='%23666' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/></svg>");
+		background-repeat: no-repeat;
+		background-position: right 6px center;
+	}
+	
+
+	button.chip {
 		cursor: pointer;
 	}
 
@@ -547,8 +673,12 @@
 	}
 	.clear-all {
 		margin-left: auto;
-		text-decoration: underline;
+		background: none; border: none; font: inherit; padding: 0; background: none; border: none; font: inherit; padding: 0; text-decoration: underline;
 		text-underline-offset: 3px;
+		cursor: pointer;
+	}
+
+	button.chip {
 		cursor: pointer;
 	}
 
@@ -590,10 +720,15 @@
 		font-variant-numeric: tabular-nums;
 	}
 	.d5-activity-head .range .reset {
+		background: none; border: none; font: inherit; padding: 0;
 		margin-left: 10px;
 		color: var(--fg-3);
-		text-decoration: underline;
+		background: none; border: none; font: inherit; padding: 0; background: none; border: none; font: inherit; padding: 0; text-decoration: underline;
 		text-underline-offset: 3px;
+		cursor: pointer;
+	}
+
+	button.chip {
 		cursor: pointer;
 	}
 	.d5-bars {
@@ -680,6 +815,10 @@
 		text-transform: uppercase;
 		font-weight: var(--fw-semibold);
 		padding: 6px 12px;
+		cursor: pointer;
+	}
+
+	button.chip {
 		cursor: pointer;
 	}
 	.d5-toggle button + button {
@@ -952,6 +1091,10 @@
 		letter-spacing: var(--tracking-wider);
 		text-transform: uppercase;
 		color: var(--fg-2);
+		cursor: pointer;
+	}
+
+	button.chip {
 		cursor: pointer;
 	}
 	.pg-btn[disabled] {

@@ -1,10 +1,17 @@
 <script lang="ts">
 	import MiniMap from '$lib/MiniMap.svelte';
-	import { UV_RESOLUTIONS, UV_SUMMARY } from '$lib/mockData';
+	let { data } = $props();
 
-	const featured = UV_RESOLUTIONS.SC[1];
-	const totalGA = UV_SUMMARY.GA.total;
-	const totalSC = UV_SUMMARY.SC.total;
+	const gaRes = $derived(data.gaResolutions || []);
+	const scRes = $derived(data.scResolutions || []);
+	
+	const featured = $derived(scRes.length > 0 ? scRes[scRes.length - 1] : null);
+	const totalGA = $derived(gaRes.length);
+	const totalSC = $derived(scRes.length);
+	
+	const adoptedGA = $derived(gaRes.filter((r: any) => r.result === 'Adopted').length);
+	const adoptedSC = $derived(scRes.filter((r: any) => r.result === 'Adopted').length);
+	const vetoedSC = $derived(scRes.filter((r: any) => r.result === 'Vetoed').length);
 </script>
 
 <header class="site-header">
@@ -49,13 +56,13 @@
 		<div class="col">
 			<div class="label">Adopted</div>
 			<div class="figure yes">
-				{(UV_SUMMARY.GA.adopted + UV_SUMMARY.SC.adopted).toLocaleString()}
+				{(adoptedGA + adoptedSC).toLocaleString()}
 			</div>
 			<div class="sub">Passed at least one threshold</div>
 		</div>
 		<div class="col">
 			<div class="label">Vetoed</div>
-			<div class="figure no">{UV_SUMMARY.SC.vetoed}</div>
+			<div class="figure no">{vetoedSC}</div>
 			<div class="sub">SC only · by permanent members</div>
 		</div>
 		<div class="col">
@@ -65,6 +72,7 @@
 		</div>
 	</div>
 
+	{#if featured}
 	<div class="section-mark">
 		<span class="num">02</span>
 		<span class="label">Most recent · Security Council</span>
@@ -73,7 +81,7 @@
 	</div>
 	<div class="featured">
 		<div class="body">
-			<div class="eyebrow">Security Council · Vetoed</div>
+			<div class="eyebrow">Security Council · {featured.result}</div>
 			<div class="res-id">{featured.id}</div>
 			<h2>{featured.title}</h2>
 			<div class="meta-row">
@@ -99,6 +107,7 @@
 		</div>
 		<MiniMap resolution={featured} />
 	</div>
+	{/if}
 
 	<div class="section-mark">
 		<span class="num">03</span>
