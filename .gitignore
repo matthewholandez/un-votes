@@ -1,5 +1,8 @@
 node_modules
 
+# VSC
+.vscode/settings.json
+
 # Output
 .output
 .vercel
@@ -31,6 +34,7 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+.ruff_cache/
 
 AGENTS.md
 CLAUDE.md
