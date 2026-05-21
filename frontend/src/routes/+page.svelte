@@ -109,7 +109,7 @@
 	</div>
 	{/if}
 
-	<div class="section-mark">
+	<!-- <div class="section-mark">
 		<span class="num">03</span>
 		<span class="label">Browse by body</span>
 	</div>
@@ -132,7 +132,7 @@
 			</p>
 			<span class="open">Open voting records <span class="arrow">→</span></span>
 		</a>
-	</div>
+	</div> -->
 </main>
 
 <footer class="site-footer">
@@ -254,7 +254,7 @@
 	}
 	.home-hero {
 		padding-bottom: 56px;
-		border-bottom: 1px solid var(--gray-950);
+		/* border-bottom: 1px solid var(--gray-950); */
 	}
 	.home-eyebrow {
 		font-size: 11px;
@@ -461,7 +461,7 @@
 		color: var(--fg-on-dark);
 	}
 
-	.bodies {
+	/* .bodies {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 0;
@@ -520,7 +520,7 @@
 	}
 	.body-link:hover .open .arrow {
 		transform: translateX(4px);
-	}
+	} */
 
 	@keyframes fade-in {
 		from {
