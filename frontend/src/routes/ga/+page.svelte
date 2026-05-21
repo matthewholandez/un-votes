@@ -16,7 +16,7 @@
 	type Month = { year: string; name: string; total: number; contested: number; rows: Row[] };
 
 	const START_YEAR = 1946;
-	const END_YEAR = 2024;
+	const END_YEAR = 2026;
 	const N_YEARS = END_YEAR - START_YEAR + 1;
 
 	// State
@@ -27,7 +27,7 @@
 	let voteFilter = $state('All');
 	
 	let selStart = $state(1946);
-	let selEnd = $state(2024);
+	let selEnd = $state(2026);
 	let sortOrder = $state<'newest' | 'oldest'>('newest');
 	let currentPage = $state(1);
 	const PAGE_SIZE = 50;
@@ -245,12 +245,12 @@
 
 	<div class="d5-activity">
 		<div class="d5-activity-head">
-			<div class="label"><b>Resolutions per year</b> · GA, 1946–2024</div>
+			<div class="label"><b>Resolutions per year</b> · GA, 1946–2026</div>
 			<div class="range">
 				Selected <b>{selStart} – {selEnd}</b>{#if selStart !== START_YEAR || selEnd !== END_YEAR}<button type="button" class="reset" onclick={() => {selStart = START_YEAR; selEnd = END_YEAR}}>reset</button>{/if}
 			</div>
 		</div>
-		<div role="slider" aria-valuemin={START_YEAR} aria-valuemax={END_YEAR} aria-valuenow={selStart} tabindex="0" class="d5-bars" aria-label="Resolutions per year, 1946–2024"
+		<div role="slider" aria-valuemin={START_YEAR} aria-valuemax={END_YEAR} aria-valuenow={selStart} tabindex="0" class="d5-bars" aria-label="Resolutions per year, 1946–2026"
 			onpointerdown={(e) => {
 				isDragging = true;
 				const y = getYearFromEvent(e, e.currentTarget);
@@ -286,8 +286,8 @@
 			{/each}
 		</div>
 		<div class="d5-axis">
-			<span>1946</span><span>1960</span><span>1975</span>
-			<span>1990</span><span>2005</span><span>2024</span>
+			<span>1946</span><span>1962</span><span>1978</span>
+			<span>1994</span><span>2010</span><span>2026</span>
 		</div>
 	</div>
 
@@ -399,7 +399,7 @@
 				<span>Result</span>
 			</div>
 			{#each m.rows as r}
-				<div class="d5-row">
+				<a class="d5-row" href="/ga/{r.id}">
 					<div class="day">{r.day}<span class="dow">{r.dow}</span></div>
 					<div class="id">{r.id}</div>
 					<div class="title">
@@ -442,7 +442,7 @@
 						{/if}
 						<div class="result"><span class="badge adopted">{r.result}</span></div>
 					</div>
-				</div>
+				</a>
 			{/each}
 		{/each}
 
@@ -864,14 +864,17 @@
 	}
 
 	/* === Unified row === */
+	
 	.d5-row {
 		display: grid;
 		align-items: center;
 		border-bottom: 1px solid var(--border-muted);
 		padding: 10px 0;
-		cursor: pointer;
+		text-decoration: none;
+		color: inherit;
 		transition: background var(--dur) var(--ease);
 	}
+
 	.d5-row:hover {
 		background: var(--bg-subtle);
 	}
